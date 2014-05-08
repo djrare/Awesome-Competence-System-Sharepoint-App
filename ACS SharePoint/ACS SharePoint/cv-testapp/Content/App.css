@@ -1,0 +1,100 @@
+/* Client Web Part styles */
+.clientwebpart-body
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+	.clientwebpart-body .clientwebpart-div
+	{
+		margin: 0;
+		padding: 5px;
+		border: 0;
+		position: relative;
+		width: 300px;
+		height: 200px;
+		background-color: #0072C6;
+		color: #FFFFFF;
+		font-size: 14pt;
+	}
+
+/* Place custom styles below */
+.card {
+	background: #eee;
+	color: #333;
+	font-size: 80%;
+	display: inline-block;
+	width: 200px;
+	padding: 1em;
+	margin: 1em;
+	vertical-align: top;
+}
+
+.card-small {
+    background: #eee;
+	color: #333;
+	font-size: 80%;
+	display: inline-block;
+	width: 240px;
+    height:auto;
+	padding-top: 5px;
+    padding-left:1em;
+    padding-right:1em;
+    padding-bottom:5px;
+	margin-top: 5px;
+    margin-bottom:5px;
+    margin-right: 0px;
+    margin-left:0px;
+	vertical-align: top;
+    clear:both;
+}
+
+.message {
+	overflow-y: auto;
+}
+
+.imgdiv {
+	background-size: cover; 
+	width: 64px; 
+	height: 64px; 
+	float: right;
+    margin-top: 5px;
+}
+
+#browse {
+    margin-left:auto;
+    margin-right:auto;
+    width:150px;
+    height: 20px;
+}
+
+#browse_prev {
+    float:left;
+}
+
+#browse_next {
+    float:right;
+}
+
+a.toggle-button:visited, a.toggle-button:active, a.toggle-button:focus, a.toggle-button:hover, a#filter-button:visited, a#filter-button:active, a#filter-button:hover, a#filter-button:focus {
+    text-decoration:none;
+    color:#0072c6;
+    outline:0;
+}
+
+#inputq {
+    width:100%;
+}
+
+.search, .filter {
+    clear:both;
+    width:100%;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+#filter-text {
+    color: #999;
+    margin-left: 10px;
+}

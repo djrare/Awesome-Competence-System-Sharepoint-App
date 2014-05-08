@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="270a73a2-c07d-45a6-82ff-bcc545949951" 
+        solutionId="270a73a2-c07d-45a6-82ff-bcc545949951" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="cv-testapp"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="e0b156c9-306d-42ae-827d-e8a10d4627e0" />
+  </features>
+</package>
