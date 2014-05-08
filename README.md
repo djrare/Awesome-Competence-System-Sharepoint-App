@@ -9,4 +9,4 @@ ACS WebPart
 
 ACS Filter WebPart
 ------------------
-![Blurred ScreenShot](https://raw.github.com/altran/Awesome-Competence-System-Sharepoint-App/blob/master/acs_filter_webpart_blurred.jpg)
+![Blurred ScreenShot](https://raw.github.com/altran/Awesome-Competence-System-Sharepoint-App/master/acs_filter_webpart_blurred.jpg)
