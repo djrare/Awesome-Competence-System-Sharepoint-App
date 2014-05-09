@@ -41,14 +41,14 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="ClientWebPart1\SharePointProjectItem.spdata">
+    <None Include="AcsWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{5b3fd6e3-3094-4dc9-8d27-ed511f3d6e0a}</SharePointProjectItemId>
     </None>
-    <Content Include="ClientWebPart1\Elements.xml">
+    <Content Include="AcsWebPart\Elements.xml">
       <SubType>ParentWebElementManifest</SubType>
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
     </Content>
-    <None Include="ClientWebPart2\SharePointProjectItem.spdata">
+    <None Include="AcsFilterWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{71e5eacd-849c-462f-a601-9eb1b08717b3}</SharePointProjectItemId>
     </None>
     <None Include="Content\SharePointProjectItem.spdata">
@@ -63,12 +63,12 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{4ea5f5fb-fceb-4e36-9e62-da2bafc8dbec}</SharePointProjectItemId>
     </None>
-    <Content Include="ClientWebPart2\Elements.xml">
+    <Content Include="AcsFilterWebPart\Elements.xml">
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
     </Content>
     <Content Include="Content\Elements.xml" />
     <Content Include="Images\Elements.xml" />
-    <Content Include="Pages\CvFilterWebPart.aspx" />
+    <Content Include="Pages\AcsFilterWebPart.aspx" />
     <Content Include="Pages\Elements.xml" />
     <Content Include="Scripts\Elements.xml" />
   </ItemGroup>
@@ -77,7 +77,7 @@
     <Content Include="Images\AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
-    <Content Include="Pages\ClientWebPart.aspx" />
+    <Content Include="Pages\AcsWebPart.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\doT.min.js" />

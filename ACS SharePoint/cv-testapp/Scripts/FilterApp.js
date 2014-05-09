@@ -9,6 +9,8 @@ ACS.Common = {
     filter: '',
     num: 0,
     senderId: '',
+    db: '',
+    rows: 0,
     startPager: 0,
     template: null,
     renderer: null,
@@ -30,7 +32,7 @@ ACS.Common = {
         }
 
         this.ajaxSearch = $.ajax({
-            url: 'https://cv.altran.se/solr/collection1/select' + this.filter,
+            url: this.db + this.filter,
             data: { 'wt': 'json', 'q': q },
             success: function (data) {
                 ACS.Common.renderResults(data);
@@ -78,12 +80,24 @@ ACS.Common = {
         for (var i = 0; i < params.length; i = i + 1) {
             var param = params[i].split("=");
 
-            if (param[0] == "filter")
+            if (param[0] == "filter") {
                 this.filter = '?' + decodeURIComponent(param[1]);
-            else if (param[0] == "num")
+            }
+            else if (param[0] == "num") {
                 this.num = parseInt(param[1]);
-            if (param[0].toLowerCase() == "senderid")
+            }
+            else if (param[0].toLowerCase() == "senderid") {
                 this.senderId = decodeURIComponent(param[1]);
+            }
+            else if (param[0].toLowerCase() == "db") {
+                this.db = decodeURIComponent(param[1]);
+                if (this.db === '') {
+                    this.db = "https://cv.altran.se/solr/collection1/select";
+                }
+            }
+            else if (param[0].toLowerCase() == "rows") {
+                this.rows = parseInt(param[1]);
+            }
         }
     },
 
@@ -106,17 +120,21 @@ ACS.Common = {
 ACS.AppPart = {
     firstResize: false,
     previousHeight: 0,
+    previousWidth: 0,
     minHeight: 100,
+    minWidth: 270,
 
     adjustHeight: function () {
         var step = 30,
             width = $("body").width(),
             height = $("body").height(),
             newHeight,
+            newWidth,
             contentHeight = 0,
             resizeMessage = '<message senderId={Sender_ID}>resize({Width}, {Height})</message>';
 
         contentHeight += $('#CvFilterWebPartContent').outerHeight(true);
+        newWidth = this.minWidth * ACS.Common.rows;
 
         //If content is not high as the 'body'
         if (contentHeight < height - step && contentHeight >= this.minHeight) {
@@ -124,15 +142,16 @@ ACS.AppPart = {
         }
 
         //Setting height
-        if (this.previousHeight !== height || this.firstResize === true) {
+        if (this.previousHeight !== height || this.previousWidth !== newWidth || this.firstResize === true) {
             newHeight = Math.floor(height / step) * step + step * Math.ceil((height / step) - Math.floor(height / step));
 
             resizeMessage = resizeMessage.replace("{Sender_ID}", ACS.Common.senderId);
             resizeMessage = resizeMessage.replace("{Height}", newHeight);
-            resizeMessage = resizeMessage.replace("{Width}", width);
+            resizeMessage = resizeMessage.replace("{Width}", newWidth);
             window.parent.postMessage(resizeMessage, "*");
 
             this.previousHeight = newHeight;
+            this.previousWidth = newWidth;
             this.firstResize = false;
         }
     }

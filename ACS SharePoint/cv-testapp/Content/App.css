@@ -37,15 +37,16 @@
 	font-size: 80%;
 	display: inline-block;
 	width: 240px;
+    min-height:100px;
     height:auto;
 	padding-top: 5px;
     padding-left:1em;
     padding-right:1em;
-    padding-bottom:5px;
+    padding-bottom:10px;
 	margin-top: 5px;
-    margin-bottom:5px;
-    margin-right: 0px;
-    margin-left:0px;
+    margin-bottom: 5px;
+    margin-right: 3px;
+    margin-left:3px;
 	vertical-align: top;
     clear:both;
 }
@@ -89,7 +90,7 @@ a.toggle-button:visited, a.toggle-button:active, a.toggle-button:focus, a.toggle
 
 .search, .filter {
     clear:both;
-    width:100%;
+    width:270px;
     margin-top:5px;
     margin-bottom: 5px;
 }
@@ -97,4 +98,8 @@ a.toggle-button:visited, a.toggle-button:active, a.toggle-button:focus, a.toggle
 #filter-text {
     color: #999;
     margin-left: 10px;
+}
+
+.card-small h4 {
+    height: 28px;
 }

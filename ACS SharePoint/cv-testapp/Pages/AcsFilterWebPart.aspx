@@ -22,7 +22,7 @@
 			{{?it.image}}<div style="background-image: url(https://cv.altran.se/media/{{=it.image}});" class="imgdiv"></div>{{?}}
 			<h2>{{=it.name}}</h2>
 			<h4>{{=it.title}}</h4>
-			<p>
+            <p>
                 {{=it.phone}} {{? it.country }} <img src="https://cv.altran.se/static/img/flags/{{=it.country}}.gif" width="16" height="11" alt="{{=it.country}}"/>{{?}}<br/>
                 <a href="mailto:{{=it.mail}}">{{=it.mail}}</a>
             </p>
