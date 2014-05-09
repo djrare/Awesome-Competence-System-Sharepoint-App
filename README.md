@@ -1,11 +1,10 @@
 Awesome-Competence-System-Sharepoint-App
 ========================================
 
-Apps and other solutions to maximize the value from Awesome Competance System for SharePoint Intranets
+This SharePoint 2013 App render an Iframe with competence profile cards fetched from an ACS Apache SOLR Index. 
+It is possible to set number of cards to display as well as the filter in App settings when you add the app to your page.
 
-ACS WebPart
------------
-![Blurred ScreenShot](https://raw.github.com/altran/ACS-SharepointComponents/master/ACS_in_Sharepoint_blurred.png)
+In order to install this app on a site, it needs to be installed and approved in your sharepoint app server first.
 
 ACS Filter WebPart
 ------------------
