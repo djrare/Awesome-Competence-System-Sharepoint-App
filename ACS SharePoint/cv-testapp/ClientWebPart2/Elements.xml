@@ -10,8 +10,8 @@
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
     <Properties>
-      <Property Name="filter" WebDescription="Search filter" Type="string" WebDisplayName="Filter" WebBrowsable="true" RequiresDesignerPermission="true" DefaultValue='fq=location_exact:("Oslo")&amp;rows=50'></Property>
-      <Property Name="num" WebDisplayName="Number of items" WebDescription="Number of items displayed" Type="int" WebBrowsable="true" RequiresDesignerPermission="true" DefaultValue="4"></Property>
+      <Property Name="filter" WebDisplayName="Filter" WebDescription="" Type="string"  WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue='fq=location_exact:("Oslo")&amp;rows=50'></Property>
+      <Property Name="num" WebDisplayName="Number of items displayed" WebDescription="" Type="int" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue="5"></Property>
     </Properties>
 
   </ClientWebPart>
