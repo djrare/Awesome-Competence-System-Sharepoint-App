@@ -10,8 +10,9 @@ ACS.Common = {
     num: 0,
     senderId: '',
     db: '',
-    rows: 0,
+    cols: 0,
     startPager: 0,
+    numHits: 0,
     template: null,
     renderer: null,
     ajaxSearch: null,
@@ -36,7 +37,7 @@ ACS.Common = {
             data: { 'wt': 'json', 'q': q },
             success: function (data) {
                 ACS.Common.renderResults(data);
-                ACS.AppPart.adjustHeight();
+                ACS.AppPart.adjustSize();
             },
             dataType: 'jsonp',
             jsonp: 'json.wrf'
@@ -49,6 +50,10 @@ ACS.Common = {
 
         if (data.response.numFound > 0) {
             var ppl = data.response.docs;
+
+            this.numHits = ppl.length;
+            //this.updatePagerIndex();
+
             for (var i = this.startPager; i < ppl.length; i++) {
                 if (numItems == this.num)
                     break;
@@ -95,8 +100,8 @@ ACS.Common = {
                     this.db = "https://cv.altran.se/solr/collection1/select";
                 }
             }
-            else if (param[0].toLowerCase() == "rows") {
-                this.rows = parseInt(param[1]);
+            else if (param[0].toLowerCase() == "cols") {
+                this.cols = parseInt(param[1]);
             }
         }
     },
@@ -114,17 +119,24 @@ ACS.Common = {
 
     changePagerReset: function() {
         this.startPager = 0;
+    },
+
+    updatePagerIndex: function () {
+        var startIndex = this.startPager + 1;
+        var endIndex = (startIndex + this.num < this.numHits) ? this.startPager + this.num : this.numHits;
+        $('#browse-index').text(startIndex + ' - ' + endIndex);
     }
 };
 
 ACS.AppPart = {
-    firstResize: false,
+    firstResize: true,
     previousHeight: 0,
     previousWidth: 0,
     minHeight: 100,
     minWidth: 270,
+    minCardHeight: 125,
 
-    adjustHeight: function () {
+    adjustSize: function () {
         var step = 30,
             width = $("body").width(),
             height = $("body").height(),
@@ -132,16 +144,26 @@ ACS.AppPart = {
             newWidth,
             contentHeight = 0,
             resizeMessage = '<message senderId={Sender_ID}>resize({Width}, {Height})</message>';
+        
+        newWidth = this.minWidth * ACS.Common.cols;
 
-        contentHeight += $('#CvFilterWebPartContent').outerHeight(true);
-        newWidth = this.minWidth * ACS.Common.rows;
-
+        //Calculating height of content, when page is loaded first time, based on number of columns
+        if (this.firstResize === true && ACS.Common.numHits > 0 && ACS.Common.cols > 1) {
+            var displayNumItems = (ACS.Common.num >= ACS.Common.numHits) ? ACS.Common.numHits : ACS.Common.num;
+            //Finding number of rows used to display content
+            var contentRows = (displayNumItems % ACS.Common.cols == 0) ? displayNumItems / ACS.Common.cols : Math.floor(displayNumItems / ACS.Common.cols) + 1;
+            //Calculating height needed for displaying content
+            contentHeight = ($('#CvFilterWebPartContent').outerHeight(true) - ($(".card-small").length * this.minCardHeight)) + (contentRows * this.minCardHeight);
+        }
+        else {
+            contentHeight = $('#CvFilterWebPartContent').outerHeight(true);
+        }
         //If content is not high as the 'body'
         if (contentHeight < height - step && contentHeight >= this.minHeight) {
             height = contentHeight;
         }
 
-        //Setting height
+        //Setting height and width
         if (this.previousHeight !== height || this.previousWidth !== newWidth || this.firstResize === true) {
             newHeight = Math.floor(height / step) * step + step * Math.ceil((height / step) - Math.floor(height / step));
 
@@ -176,7 +198,7 @@ ACS.AppPart = {
 })();
 
 function toggleCV(id) {
-    $("#toggle-cv-" + id).toggle("fast", function () { ACS.AppPart.adjustHeight(); });
+    $("#toggle-cv-" + id).toggle("fast", function () { ACS.AppPart.adjustSize(); });
     if ($("#toggle-button-" + id).text().indexOf("Show") > -1)
         $("#toggle-button-" + id).text("Hide CV <<");
     else
@@ -184,12 +206,13 @@ function toggleCV(id) {
 }
 
 function toggleFilter() {
-    $("#filter-text").toggle("fast", function () { ACS.AppPart.adjustHeight(); });
+    $("#filter-text").toggle("fast", function () { ACS.AppPart.adjustSize(); });
     if ($("#filter-button").text().indexOf("Show") > -1)
         $("#filter-button").text("Hide filter <<");
     else
         $("#filter-button").text("Show filter >>");
 }
+
 
 $("#browse_next").click(function () {
     ACS.Common.changePagerPositiv();
@@ -205,6 +228,7 @@ $("#browse_prev").click(function () {
     ACS.Common.search();
     $("#browse_next").show();
 });
+
 
 $('#inputq').keyup(function () {
     var q = $(this).val() || '*';

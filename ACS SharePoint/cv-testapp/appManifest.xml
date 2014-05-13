@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--Created:cbbc9d22-5cf7-4e4c-8ee9-42a772aae58a-->
-<App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest" ProductID="{9f0aa63b-ccb4-41db-912c-c741a34dc54c}" Version="1.0.4.6" SharePointMinVersion="15.0.0.0" Name="ACS SharePoint App">
+<App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest" ProductID="{9f0aa63b-ccb4-41db-912c-c741a34dc54c}" Version="1.0.5.0" SharePointMinVersion="15.0.0.0" Name="ACS SharePoint App">
   <Properties>
     <Title>ACS SharePoint App</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>

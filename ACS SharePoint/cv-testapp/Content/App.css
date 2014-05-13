@@ -6,7 +6,7 @@
 	border: 0;
 }
 
-	.clientwebpart-body .clientwebpart-div
+.clientwebpart-body .clientwebpart-div
 	{
 		margin: 0;
 		padding: 5px;
@@ -63,11 +63,17 @@
     margin-top: 5px;
 }
 
-#browse {
+.browse {
     margin-left:auto;
     margin-right:auto;
     width:150px;
     height: 20px;
+}
+
+.browse-wrapper {
+    height:20px;
+    width:250px;
+    margin: 0 auto;
 }
 
 #browse_prev {
@@ -78,7 +84,14 @@
     float:right;
 }
 
-a.toggle-button:visited, a.toggle-button:active, a.toggle-button:focus, a.toggle-button:hover, a#filter-button:visited, a#filter-button:active, a#filter-button:hover, a#filter-button:focus {
+#browse-index {
+    width:150px;
+    text-align:center;
+}
+
+a.toggle-button:visited, a.toggle-button:active, a.toggle-button:focus, a.toggle-button:hover, a#filter-button:visited, 
+a#filter-button:active, a#filter-button:hover, a#filter-button:focus, a#browse_prev:visited, a#browse_prev:active,
+a#browse_prev:focus, a#browse_prev:hover,a#browse_next:visited, a#browse_next:active, a#browse_next:focus, a#browse_next:hover {
     text-decoration:none;
     color:#0072c6;
     outline:0;

@@ -76,7 +76,7 @@
             <div id="filter-text" style="display:none;"></div>
         </div>        
         <div id="message"></div>
-        <div id="browse">
+        <div class="browse">
             <a href="javascript:return false;" id="browse_prev" style="display:none">Previous</a>
             <a href="javascript:return false;" id="browse_next">Next</a>
         </div>
