@@ -52,7 +52,7 @@ ACS.Common = {
             var ppl = data.response.docs;
 
             this.numHits = ppl.length;
-            //this.updatePagerIndex();
+            this.updatePagerIndex();
 
             for (var i = this.startPager; i < ppl.length; i++) {
                 if (numItems == this.num)
@@ -124,7 +124,7 @@ ACS.Common = {
     updatePagerIndex: function () {
         var startIndex = this.startPager + 1;
         var endIndex = (startIndex + this.num < this.numHits) ? this.startPager + this.num : this.numHits;
-        $('#browse-index').text(startIndex + ' - ' + endIndex);
+        $('#browse-index').text(startIndex + ' - ' + endIndex + ' ... ' + this.numHits);
     }
 };
 

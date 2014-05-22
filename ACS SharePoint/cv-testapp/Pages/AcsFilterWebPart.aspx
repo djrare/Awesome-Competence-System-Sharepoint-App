@@ -77,8 +77,9 @@
         </div>        
         <div id="message"></div>
         <div class="browse">
-            <a href="javascript:return false;" id="browse_prev" style="display:none">Previous</a>
-            <a href="javascript:return false;" id="browse_next">Next</a>
+            <span id="browse_left"><a href="javascript:return false;" id="browse_prev" style="display:none">Previous</a></span>            
+            <span id="browse-index"></span>
+            <span id="browse_right"><a href="javascript:return false;" id="browse_next">Next</a></span>
         </div>
     </div>
     <script type="text/javascript" src="../Scripts/FilterApp.js"></script>

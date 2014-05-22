@@ -64,28 +64,24 @@
 }
 
 .browse {
+    width:270px;
+    overflow:hidden;
     margin-left:auto;
     margin-right:auto;
-    width:150px;
-    height: 20px;
 }
 
-.browse-wrapper {
-    height:20px;
-    width:250px;
-    margin: 0 auto;
+#browse_left {
+    width:30%;
+    text-align:center;
 }
 
-#browse_prev {
-    float:left;
-}
-
-#browse_next {
-    float:right;
+#browse_right {
+    width:30%;
+    text-align:center;
 }
 
 #browse-index {
-    width:150px;
+    width:36%;
     text-align:center;
 }
 
