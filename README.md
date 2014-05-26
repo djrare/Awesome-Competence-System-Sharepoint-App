@@ -8,19 +8,19 @@ In order to install this app on a site, it needs to be installed and approved in
 
 ACS Filter WebPart properties
 -----------------------------
-Search index request URL:
+####Search index request URL:
 Request URL to SOLR database
 
-Filter:
+####Filter:
 Request filter. For example fq=location_exact:("Oslo")&fq=technology:("php")&rows=500
 
-Number of columns:
+####Number of columns:
 How many columns the items will be split into
 
-Number of items displayed:
+####Number of items displayed:
 Total number of items on each "page".
 
-To change default webpart properties values, edit line 13-16 in:
+####To change default webpart properties values, edit line 13-16 in:
 ACS SharePoint\cv-testapp\AcsFilterWebPart\elements.xml
 
 
