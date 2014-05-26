@@ -10,7 +10,7 @@
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
     <Properties>
-      <Property Name="db" WebDisplayName="Database URL" WebDescription="" Type="string" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue=""></Property>
+      <Property Name="db" WebDisplayName="Search index request URL" WebDescription="" Type="string" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue=""></Property>
       <Property Name="filter" WebDisplayName="Filter" WebDescription="" Type="string"  WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue='fq=location_exact:("Oslo")&amp;rows=500'></Property>
       <Property Name="num" WebDisplayName="Number of items displayed" WebDescription="" Type="int" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue="6"></Property>
       <Property Name="cols" WebDisplayName="Number of columns" WebDescription="" Type="int" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue="2"></Property>

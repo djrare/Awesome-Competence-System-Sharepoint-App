@@ -96,9 +96,6 @@ ACS.Common = {
             }
             else if (param[0].toLowerCase() == "db") {
                 this.db = decodeURIComponent(param[1]);
-                if (this.db === '') {
-                    this.db = "https://cv.altran.se/solr/collection1/select";
-                }
             }
             else if (param[0].toLowerCase() == "cols") {
                 this.cols = parseInt(param[1]);
