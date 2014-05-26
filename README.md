@@ -20,21 +20,6 @@ How many columns the items will be split into
 Number of items displayed:
 Total number of items on each "page", 
 
-Columns and items example:
-
-Number of columns = 6
-Number of items displayed = 12
-
-X | X | X | X | X | X
-X | X | X | X | X | X
-
-Number of columns = 4
-Number of items displayed = 16
-
-X | X | X | X 
-X | X | X | X
-X | X | X | X
-X | X | X | X
 
 ACS Filter WebPart
 ------------------
