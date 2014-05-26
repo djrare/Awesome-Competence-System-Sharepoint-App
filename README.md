@@ -21,6 +21,10 @@ Number of items displayed:
 Total number of items on each "page", 
 
 
+To change default webpart properties values, edit line 13-16 in:
+ACS SharePoint\cv-testapp\AcsFilterWebPart\elements.xml
+
+
 ACS Filter WebPart
 ------------------
 ![Blurred ScreenShot](https://raw.github.com/altran/Awesome-Competence-System-Sharepoint-App/master/acs_filter_webpart_blurred.jpg)
