@@ -9,7 +9,7 @@ In order to install this app on a site, it needs to be installed and approved in
 ACS Filter WebPart properties
 -----------------------------
 ####Search index request URL:
-Request URL to SOLR database
+Request URL to SOLR search index
 
 ####Filter:
 Request filter. For example fq=location_exact:("Oslo")&fq=technology:("php")&rows=500
