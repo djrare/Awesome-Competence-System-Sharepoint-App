@@ -8,7 +8,7 @@ In order to install this app on a site, it needs to be installed and approved in
 
 ACS Filter WebPart properties
 -----------------------------
-Database URL:
+Search index request URL:
 Request URL to SOLR database
 
 Filter:
@@ -18,8 +18,7 @@ Number of columns:
 How many columns the items will be split into
 
 Number of items displayed:
-Total number of items on each "page", 
-
+Total number of items on each "page".
 
 To change default webpart properties values, edit line 13-16 in:
 ACS SharePoint\cv-testapp\AcsFilterWebPart\elements.xml
