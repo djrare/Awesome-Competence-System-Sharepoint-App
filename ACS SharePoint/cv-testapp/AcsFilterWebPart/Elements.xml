@@ -5,12 +5,13 @@
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_
          Example: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
-    <Content Type="html" Src="~appWebUrl/Pages/AcsFilterWebPart.aspx?filter=_filter_&amp;num=_num_&amp;db=_db_&amp;cols=_cols_" />
+    <Content Type="html" Src="~appWebUrl/Pages/AcsFilterWebPart.aspx?filter=_filter_&amp;num=_num_&amp;db=_db_&amp;cols=_cols_&amp;cv=_cv_" />
 
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
     <Properties>
       <Property Name="db" WebDisplayName="Search index request URL" WebDescription="" Type="string" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue=""></Property>
+      <Property Name="cv" WebDisplayName="CV Database URL" WebDescription="" Type="string" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue=""></Property>
       <Property Name="filter" WebDisplayName="Filter" WebDescription="" Type="string"  WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue='fq=location_exact:("Oslo")&amp;rows=500'></Property>
       <Property Name="num" WebDisplayName="Number of items displayed" WebDescription="" Type="int" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue="6"></Property>
       <Property Name="cols" WebDisplayName="Number of columns" WebDescription="" Type="int" WebBrowsable="true" RequiresDesignerPermission="false" DefaultValue="2"></Property>

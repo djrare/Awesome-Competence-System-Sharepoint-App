@@ -19,11 +19,11 @@
 
     <script id="persontemplate" type="text/x-dot-template">
 		<div class="card-small" id="p{{=it.id}}">
-			{{?it.image}}<div style="background-image: url(https://cv.altran.se/media/{{=it.image}});" class="imgdiv"></div>{{?}}
+			{{?it.image}}<div style="background-image: url({{=it.cvurl}}/media/{{=it.image}});" class="imgdiv"></div>{{?}}
 			<h2>{{=it.name}}</h2>
 			<h4>{{=it.title}}</h4>
             <p>
-                {{=it.phone}} {{? it.country }} <img src="https://cv.altran.se/static/img/flags/{{=it.country}}.gif" width="16" height="11" alt="{{=it.country}}"/>{{?}}<br/>
+                {{=it.phone}} {{? it.country }} <img src="{{=it.cvurl}}/static/img/flags/{{=it.country}}.gif" width="16" height="11" alt="{{=it.country}}"/>{{?}}<br/>
                 <a href="mailto:{{=it.mail}}">{{=it.mail}}</a>
             </p>
             <a id="toggle-button-{{=it.id}}" class="toggle-button" href="javascript:return false;" onClick="javascript:toggleCV({{=it.id}}, this);">Show CV &gt;&gt;</a>
@@ -34,7 +34,7 @@
 			    <ul>
 				    {{~it.cv :cv:index}}
 					    {{? cv.status.percent > 10 }} 
-						    <li><a href="https://cv.altran.se/cv/{{=cv.id}}/" target="_blank">{{=cv.tags}} {{=cv.last_edited}} {{=cv.status.percent}}%</a></li>
+						    <li><a href="{{=it.cvurl}}/cv/{{=cv.id}}/" target="_blank">{{=cv.tags}} {{=cv.last_edited}} {{=cv.status.percent}}%</a></li>
 					    {{?}}
 				    {{~}}
 			    </ul>

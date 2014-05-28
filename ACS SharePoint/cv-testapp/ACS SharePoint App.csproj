@@ -41,13 +41,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="AcsWebPart\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{5b3fd6e3-3094-4dc9-8d27-ed511f3d6e0a}</SharePointProjectItemId>
-    </None>
-    <Content Include="AcsWebPart\Elements.xml">
-      <SubType>ParentWebElementManifest</SubType>
-      <OpcRelationship>feature-elementmanifest</OpcRelationship>
-    </Content>
     <None Include="AcsFilterWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{71e5eacd-849c-462f-a601-9eb1b08717b3}</SharePointProjectItemId>
     </None>
@@ -65,6 +58,7 @@
     </None>
     <Content Include="AcsFilterWebPart\Elements.xml">
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Elements.xml" />
     <Content Include="Images\Elements.xml" />
@@ -77,9 +71,7 @@
     <Content Include="Images\AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
-    <Content Include="Pages\AcsWebPart.aspx" />
     <Content Include="Pages\Default.aspx" />
-    <Content Include="Scripts\App.js" />
     <Content Include="Scripts\doT.min.js" />
     <Content Include="Scripts\FilterApp.js" />
     <Content Include="Scripts\_references.js" />

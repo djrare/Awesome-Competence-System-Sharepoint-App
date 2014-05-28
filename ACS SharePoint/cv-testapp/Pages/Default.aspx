@@ -15,37 +15,16 @@
 	<link rel="Stylesheet" type="text/css" href="../Content/App.css" />
 
 	<!-- Add your JavaScript to the following file -->
-	
-	<script id="persontemplate" type="text/x-dot-template">
-		<div class="card" id="p{{=it.id}}">
-			{{?it.image}}<div style="background-image: url(https://cv.altran.se/media/{{=it.image}});" class="imgdiv"></div>{{?}}
-			<h2>{{=it.name}}</h2>
-			<h4>{{=it.title}}</h4>
-			<p>{{=it.phone}} {{? it.country }} <img src="https://cv.altran.se/static/img/flags/{{=it.country}}.gif" width="16" height="11" alt="{{=it.country}}"/>{{?}}<br/>
-				{{=it.mail}}</p>
-			<p class="ldetail">Profile {{=it.completeness.percent}}% complete. Updated: {{=it.last_edited}}</p>
-			{{? it.completeness.comment }}<ul class="ldetail">{{~it.completeness.comment :value:index}}<li>{{=value}}</li>{{~}}</ul>{{?}}
-			<ul>
-				{{~it.cv :cv:index}}
-					{{? cv.status.percent > 10 }} 
-						<li><a href="https://cv.altran.se/cv/{{=cv.id}}/">{{=cv.tags}} {{=cv.last_edited}} {{=cv.status.percent}}%</a></li>
-					{{?}}
-				{{~}}
-			</ul>
-		</div>
-	</script> 
 </asp:Content>
 
 <%-- The markup in the following Content element will be placed in the TitleArea of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-	Altran CV Search
+	Altran CV App
 </asp:Content>
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-	<input type="text" id="inputq">
 	<div id="message">
-		Search for people.
+		Welcome to Altran SharePoint CV App
 	</div>
-	<script type="text/javascript" src="../Scripts/App.js"></script>
 </asp:Content>

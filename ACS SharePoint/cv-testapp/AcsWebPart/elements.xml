@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ClientWebPart Name="AcsWebPart" Title="ACS WebPart" Description="cv-testapp description" DefaultWidth="300" DefaultHeight="200">
-    <Content Type="html" Src="~appWebUrl/Pages/AcsWebPart.aspx?{StandardTokens}" />
-  </ClientWebPart>
-</Elements>

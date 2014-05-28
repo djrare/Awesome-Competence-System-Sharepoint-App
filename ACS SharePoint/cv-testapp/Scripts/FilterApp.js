@@ -11,6 +11,7 @@ ACS.Common = {
     senderId: '',
     db: '',
     cols: 0,
+    cv: '',
     startPager: 0,
     numHits: 0,
     template: null,
@@ -71,6 +72,7 @@ ACS.Common = {
 
                 var person = $.parseJSON(data.response.docs[i].rendered);
                 person.image = person.image.replace(/(.jpg|.png)/gi, '_scale_110x110.jpg');
+                person.cvurl = this.cv;
                 html += this.renderer(person);
                 numItems++;
             }
@@ -99,6 +101,9 @@ ACS.Common = {
             }
             else if (param[0].toLowerCase() == "cols") {
                 this.cols = parseInt(param[1]);
+            }
+            else if (param[0].toLowerCase() == "cv") {
+                this.cv = decodeURIComponent(param[1]);
             }
         }
     },
