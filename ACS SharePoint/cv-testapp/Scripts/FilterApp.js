@@ -9,9 +9,9 @@ ACS.Common = {
     filter: '',
     num: 0,
     senderId: '',
-    db: '',
+    seachIndexUrl: '',
     cols: 0,
-    cv: '',
+    acsAppUrl: '',
     startPager: 0,
     numHits: 0,
     template: null,
@@ -34,7 +34,7 @@ ACS.Common = {
         }
 
         this.ajaxSearch = $.ajax({
-            url: this.db + this.filter,
+            url: this.seachIndexUrl + this.filter,
             data: { 'wt': 'json', 'q': q },
             success: function (data) {
                 ACS.Common.renderResults(data);
@@ -72,7 +72,7 @@ ACS.Common = {
 
                 var person = $.parseJSON(data.response.docs[i].rendered);
                 person.image = person.image.replace(/(.jpg|.png)/gi, '_scale_110x110.jpg');
-                person.cvurl = this.cv;
+                person.cvurl = this.acsAppUrl;
                 html += this.renderer(person);
                 numItems++;
             }
@@ -96,14 +96,14 @@ ACS.Common = {
             else if (param[0].toLowerCase() == "senderid") {
                 this.senderId = decodeURIComponent(param[1]);
             }
-            else if (param[0].toLowerCase() == "db") {
-                this.db = decodeURIComponent(param[1]);
+            else if (param[0].toLowerCase() == "searchindex") {
+                this.seachIndexUrl = decodeURIComponent(param[1]);
             }
             else if (param[0].toLowerCase() == "cols") {
                 this.cols = parseInt(param[1]);
             }
-            else if (param[0].toLowerCase() == "cv") {
-                this.cv = decodeURIComponent(param[1]);
+            else if (param[0].toLowerCase() == "acsapp") {
+                this.acsAppUrl = decodeURIComponent(param[1]);
             }
         }
     },
